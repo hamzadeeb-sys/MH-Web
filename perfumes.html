@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عطور MH الفاخرة | One Brand. Every Moment.</title>
+  <title>العطور الفاخرة | MH Official</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -35,12 +35,12 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="action-btn" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="action-btn" aria-label="السلة">
+        <button class="action-btn" type="button" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="action-btn" type="button" aria-label="السلة">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="badge" id="cartCount">0</span>
         </button>
-        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -56,14 +56,14 @@
           <span>العطور</span>
         </div>
         <h1 class="section-title">مجموعة <span>عطور MH</span></h1>
-        <p class="section-desc">تركيبات عطرية فاخرة بثبات استثنائي وتغليف كلاسيكي بالأسود الملوكي.</p>
+        <p class="section-desc">تركيبات عطرية فاخرة بثبات ممتد وتغليف كلاسيكي بالأسود الملوكي.</p>
       </div>
     </div>
 
     <section class="section-spacing">
       <div class="container">
         <div class="product-grid">
-          <!-- Product Item 1 -->
+          <!-- Item 1 -->
           <article class="category-card">
             <div class="card-img-placeholder">
               <span class="card-badge">EDP 100ml</span>
@@ -74,16 +74,16 @@
                 <h3 class="card-title">Noir Essence EDP</h3>
                 <p class="card-text">نفحات من البخور الشرقي والجلود الفاخرة مع لمسة حمضية منعشة.</p>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div class="product-footer">
                 <span class="product-price">$120.00</span>
-                <button class="btn btn-primary" style="padding: 8px 18px;" data-action="add-to-cart">
+                <button class="btn btn-primary" type="button" data-action="add-to-cart">
                   <i class="fa-solid fa-plus"></i> أضف للسلة
                 </button>
               </div>
             </div>
           </article>
 
-          <!-- Product Item 2 -->
+          <!-- Item 2 -->
           <article class="category-card">
             <div class="card-img-placeholder">
               <span class="card-badge">PARFUM 80ml</span>
@@ -94,16 +94,16 @@
                 <h3 class="card-title">Amber Fire Extreme</h3>
                 <p class="card-text">توليفة حارة من العنبر والعود وخشب الصندل للمناسبات الرسمية.</p>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div class="product-footer">
                 <span class="product-price">$145.00</span>
-                <button class="btn btn-primary" style="padding: 8px 18px;" data-action="add-to-cart">
+                <button class="btn btn-primary" type="button" data-action="add-to-cart">
                   <i class="fa-solid fa-plus"></i> أضف للسلة
                 </button>
               </div>
             </div>
           </article>
 
-          <!-- Product Item 3 -->
+          <!-- Item 3 -->
           <article class="category-card">
             <div class="card-img-placeholder">
               <span class="card-badge">EDT 100ml</span>
@@ -114,9 +114,9 @@
                 <h3 class="card-title">Velvet Breeze</h3>
                 <p class="card-text">عطر يومي خفيف برائحة الأخشاب البيضاء وأزهار البرتقال المنعشة.</p>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div class="product-footer">
                 <span class="product-price">$95.00</span>
-                <button class="btn btn-primary" style="padding: 8px 18px;" data-action="add-to-cart">
+                <button class="btn btn-primary" type="button" data-action="add-to-cart">
                   <i class="fa-solid fa-plus"></i> أضف للسلة
                 </button>
               </div>
@@ -136,6 +136,6 @@
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

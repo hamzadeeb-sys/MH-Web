@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -35,12 +35,12 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="action-btn" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="action-btn" aria-label="السلة">
+        <button class="action-btn" type="button" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="action-btn" type="button" aria-label="السلة">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="badge" id="cartCount">0</span>
         </button>
-        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -74,9 +74,9 @@
                 <h3 class="card-title">MH Stealth Chrono Watch</h3>
                 <p class="card-text">هيكل ستانلس ستيل مطفي بلون أسود عميق، حركة يابانية دقيقة مع عقرب ثوان برتقالي.</p>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div class="product-footer">
                 <span class="product-price">$260.00</span>
-                <button class="btn btn-primary" style="padding: 8px 18px;" data-action="add-to-cart">
+                <button class="btn btn-primary" type="button" data-action="add-to-cart">
                   <i class="fa-solid fa-plus"></i> أضف للسلة
                 </button>
               </div>
@@ -94,9 +94,9 @@
                 <h3 class="card-title">Monogram Leather Wallet</h3>
                 <p class="card-text">محفظة بطاقات جلدية مدمجة بحماية RFID مع نقش غائر لشعار MH الرسمي.</p>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div class="product-footer">
                 <span class="product-price">$45.00</span>
-                <button class="btn btn-primary" style="padding: 8px 18px;" data-action="add-to-cart">
+                <button class="btn btn-primary" type="button" data-action="add-to-cart">
                   <i class="fa-solid fa-plus"></i> أضف للسلة
                 </button>
               </div>
@@ -114,9 +114,9 @@
                 <h3 class="card-title">Signet Ring Matte Black</h3>
                 <p class="card-text">خاتم رجالي بحواف مشطوفة وتشطيب كربوني مقاوم للخدش مع علبة مخملية فاخرة.</p>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+              <div class="product-footer">
                 <span class="product-price">$35.00</span>
-                <button class="btn btn-primary" style="padding: 8px 18px;" data-action="add-to-cart">
+                <button class="btn btn-primary" type="button" data-action="add-to-cart">
                   <i class="fa-solid fa-plus"></i> أضف للسلة
                 </button>
               </div>
@@ -136,6 +136,6 @@
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

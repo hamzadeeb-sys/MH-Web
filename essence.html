@@ -3,13 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عطور MH الفاخرة | One Brand. Every Moment.</title>
+  <title>جوهر الهوية والتغليف | MH Brand Essence</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="./css/main.css">
+  
+  <!-- قواعد خاصة بصفحة الهوية والمواصفات (Scoped Styles) -->
+  <style>
+    .essence-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .spec-card {
+      background: var(--surface-dark);
+      border: 1px solid var(--graphite);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .spec-table-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .spec-table-row:last-child {
+      border-bottom: none;
+    }
+    .color-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-en);
+      font-size: 0.85rem;
+    }
+    .color-swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .pillar-card {
+      background: var(--surface-dark);
+      border-right: 3px solid var(--mh-orange);
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      .essence-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -26,11 +78,11 @@
       <nav>
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-          <li><a href="perfumes.html" class="nav-link active">العطور</a></li>
+          <li><a href="perfumes.html" class="nav-link">العطور</a></li>
           <li><a href="fashion.html" class="nav-link">الأزياء</a></li>
           <li><a href="accessories.html" class="nav-link">الإكسسوارات</a></li>
           <li><a href="kids.html" class="nav-link">الأطفال</a></li>
-          <li><a href="essence.html" class="nav-link">جوهر العلامة</a></li>
+          <li><a href="essence.html" class="nav-link active">جوهر العلامة</a></li>
         </ul>
       </nav>
 
@@ -40,7 +92,7 @@
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="badge" id="cartCount">0</span>
         </button>
-        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -53,75 +105,85 @@
         <div class="breadcrumbs">
           <a href="index.html">الرئيسية</a>
           <span>/</span>
-          <span>العطور</span>
+          <span>جوهر العلامة</span>
         </div>
-        <h1 class="section-title">مجموعة <span>عطور MH</span></h1>
-        <p class="section-desc">تركيبات عطرية فاخرة بثبات استثنائي وتغليف كلاسيكي بالأسود الملوكي.</p>
+        <h1 class="section-title">فلسفة <span>MH والتغليف</span></h1>
+        <p class="section-desc">المعايير الهندسية والبصرية التي تضمن تجربة غير مسبوقة في كل منتج.</p>
       </div>
     </div>
 
     <section class="section-spacing">
       <div class="container">
-        <div class="product-grid">
-          <!-- Product Item 1 -->
-          <article class="category-card">
-            <div class="card-img-placeholder">
-              <span class="card-badge">EDP 100ml</span>
-              <i class="fa-solid fa-bottle-droplet"></i>
+        <div class="essence-layout">
+          <!-- Text and Pillars -->
+          <div>
+            <div class="pillar-card">
+              <h3 style="color: var(--pure-white); margin-bottom: 8px;"><i class="fa-solid fa-eye" style="color: var(--mh-orange); margin-left: 8px;"></i> التباين الحاد (Sharp Contrast)</h3>
+              <p style="color: var(--cool-grey); font-size: 0.9rem;">
+                الاعتماد على سيادة اللون الأسود الملوكي بنسبة 70% ليمنح المنتج وقاراً وهيبة، مع لمسات حيوية باللون البرتقالي الحصري بنسبة 20% تخلق شرارة البداية والانتباه.
+              </p>
             </div>
-            <div class="card-body">
-              <div>
-                <h3 class="card-title">Noir Essence EDP</h3>
-                <p class="card-text">نفحات من البخور الشرقي والجلود الفاخرة مع لمسة حمضية منعشة.</p>
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                <span class="product-price">$120.00</span>
-                <button class="btn btn-primary" style="padding: 8px 18px;" data-action="add-to-cart">
-                  <i class="fa-solid fa-plus"></i> أضف للسلة
-                </button>
-              </div>
-            </div>
-          </article>
 
-          <!-- Product Item 2 -->
-          <article class="category-card">
-            <div class="card-img-placeholder">
-              <span class="card-badge">PARFUM 80ml</span>
-              <i class="fa-solid fa-spray-can-sparkles"></i>
+            <div class="pillar-card">
+              <h3 style="color: var(--pure-white); margin-bottom: 8px;"><i class="fa-solid fa-box-open" style="color: var(--mh-orange); margin-left: 8px;"></i> تجربة فتح العلبة (Unboxing Experience)</h3>
+              <p style="color: var(--cool-grey); font-size: 0.9rem;">
+                كل علبة مصنعة من ورق مقوى معالج بملمس مخملي (Soft-Touch)، ومختومة بشريط أمان مع رسالة شكر خاصة محفورة حرارياً، لتبدأ الفخامة قبل لمس المنتج ذاته.
+              </p>
             </div>
-            <div class="card-body">
-              <div>
-                <h3 class="card-title">Amber Fire Extreme</h3>
-                <p class="card-text">توليفة حارة من العنبر والعود وخشب الصندل للمناسبات الرسمية.</p>
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                <span class="product-price">$145.00</span>
-                <button class="btn btn-primary" style="padding: 8px 18px;" data-action="add-to-cart">
-                  <i class="fa-solid fa-plus"></i> أضف للسلة
-                </button>
-              </div>
-            </div>
-          </article>
 
-          <!-- Product Item 3 -->
-          <article class="category-card">
-            <div class="card-img-placeholder">
-              <span class="card-badge">EDT 100ml</span>
-              <i class="fa-solid fa-wind"></i>
+            <div class="pillar-card">
+              <h3 style="color: var(--pure-white); margin-bottom: 8px;"><i class="fa-solid fa-medal" style="color: var(--mh-orange); margin-left: 8px;"></i> الاستدامة والجودة العالية</h3>
+              <p style="color: var(--cool-grey); font-size: 0.9rem;">
+                مواد التعبئة قابلة لإعادة التدوير بنسبة 100% دون التنازل عن صلابة الهيكل والحماية الميكانيكية للقطع أثناء عمليات الشحن السريع.
+              </p>
             </div>
-            <div class="card-body">
-              <div>
-                <h3 class="card-title">Velvet Breeze</h3>
-                <p class="card-text">عطر يومي خفيف برائحة الأخشاب البيضاء وأزهار البرتقال المنعشة.</p>
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-                <span class="product-price">$95.00</span>
-                <button class="btn btn-primary" style="padding: 8px 18px;" data-action="add-to-cart">
-                  <i class="fa-solid fa-plus"></i> أضف للسلة
-                </button>
+          </div>
+
+          <!-- Specs Table Frame -->
+          <aside class="spec-card">
+            <h3 style="color: var(--pure-white); font-size: 1.15rem; margin-bottom: 20px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+              دليل محددات الهوية الرسمية
+            </h3>
+
+            <div class="spec-table-row">
+              <span style="color: var(--cool-grey);">البرتقالي الأساسي:</span>
+              <div class="color-pill">
+                <span class="color-swatch" style="background: #F45110;"></span>
+                <span style="color: var(--pure-white); font-weight: 600;">#F45110</span>
               </div>
             </div>
-          </article>
+
+            <div class="spec-table-row">
+              <span style="color: var(--cool-grey);">الأسود العميق:</span>
+              <div class="color-pill">
+                <span class="color-swatch" style="background: #0F0F0F;"></span>
+                <span style="color: var(--pure-white); font-weight: 600;">#0F0F0F</span>
+              </div>
+            </div>
+
+            <div class="spec-table-row">
+              <span style="color: var(--cool-grey);">الرمادي المساند:</span>
+              <div class="color-pill">
+                <span class="color-swatch" style="background: #C3CACC;"></span>
+                <span style="color: var(--pure-white); font-weight: 600;">#C3CACC</span>
+              </div>
+            </div>
+
+            <div class="spec-table-row">
+              <span style="color: var(--cool-grey);">الخط العربي:</span>
+              <span style="color: var(--pure-white); font-weight: 600;">Noto Kufi Arabic</span>
+            </div>
+
+            <div class="spec-table-row">
+              <span style="color: var(--cool-grey);">الخط اللاتيني:</span>
+              <span style="color: var(--pure-white); font-weight: 600;">Inter Display</span>
+            </div>
+
+            <div class="spec-table-row">
+              <span style="color: var(--cool-grey);">شعار المونوغرام:</span>
+              <span style="color: var(--mh-orange); font-weight: 700;">MH Minimal Geometric</span>
+            </div>
+          </aside>
         </div>
       </div>
     </section>

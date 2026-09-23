@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -39,12 +39,12 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="action-btn" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="action-btn" aria-label="السلة">
+        <button class="action-btn" type="button" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="action-btn" type="button" aria-label="السلة">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="badge" id="cartCount">0</span>
         </button>
-        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -52,18 +52,71 @@
   </header>
 
   <main>
-    <!-- Sections Grid Categories Link -->
-    <section class="section-spacing">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">قطاعات <span>العلامة</span></h2>
-            <p class="section-desc">نظام بصري متكامل يلبي أدق تفاصيل أناقتك اليومية</p>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-tag"><i class="fa-solid fa-shield-halved"></i> One Brand. Every Moment.</div>
+          <h1 class="hero-title">تفاصيل تصنع <span>الفرق</span>، وأناقة تعبّر عنك.</h1>
+          <p class="hero-subtitle">
+            هوية متجذرة في التباين الفاخر بين الأسود العميق والبرتقالي الجريء. تجربة استثنائية تبدأ من أول نظرة وحتى فتح علبة المنتج.
+          </p>
+          <div class="hero-cta-group">
+            <a href="perfumes.html" class="btn btn-primary">
+              <span>استكشف العطور</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a href="essence.html" class="btn btn-outline">
+              <span>دليل الهوية</span>
+            </a>
           </div>
         </div>
 
+        <div class="hero-card-showcase">
+          <h3 style="font-size: 1.6rem; color: var(--pure-white); margin-bottom: 6px;">Noir Essence EDP</h3>
+          <p style="color: var(--cool-grey); font-size: 0.9rem;">عطر الجرأة والأناقة المستمرة لجميع الأوقات</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights Stories Bar -->
+    <section class="highlights-bar">
+      <div class="container">
+        <div class="highlights-wrapper">
+          <a href="perfumes.html" class="highlight-item">
+            <div class="highlight-ring"><div class="highlight-circle"><i class="fa-solid fa-spray-can-sparkles"></i></div></div>
+            <span>العطور</span>
+          </a>
+          <a href="fashion.html" class="highlight-item">
+            <div class="highlight-ring"><div class="highlight-circle"><i class="fa-solid fa-shirt"></i></div></div>
+            <span>الأزياء</span>
+          </a>
+          <a href="accessories.html" class="highlight-item">
+            <div class="highlight-ring"><div class="highlight-circle"><i class="fa-solid fa-clock"></i></div></div>
+            <span>الإكسسوارات</span>
+          </a>
+          <a href="kids.html" class="highlight-item">
+            <div class="highlight-ring"><div class="highlight-circle"><i class="fa-solid fa-child"></i></div></div>
+            <span>الأطفال</span>
+          </a>
+          <a href="essence.html" class="highlight-item">
+            <div class="highlight-ring"><div class="highlight-circle"><i class="fa-solid fa-box-open"></i></div></div>
+            <span>التغليف</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">قطاعات <span>العلامة</span></h2>
+          <p class="section-desc">نظام بصري متكامل يلبي أدق تفاصيل أناقتك اليومية</p>
+        </div>
+
         <div class="category-grid">
-          <!-- Perfumes Page Link -->
+          <!-- Perfumes -->
           <article class="category-card">
             <div class="card-img-placeholder">
               <span class="card-badge">PERFUME</span>
@@ -72,13 +125,13 @@
             <div class="card-body">
               <div>
                 <h3 class="card-title">عطور MH الفاخرة</h3>
-                <p class="card-text">تركيبات شرقية وغربية مصممة لثبات ممتد مع علبة مخصصة باللونين الأسود والبرتقالي.</p>
+                <p class="card-text">تركيبات شرقية وغربية مصممة لثبات ممتد مع علبة باللونين الأسود والبرتقالي.</p>
               </div>
-              <a href="perfumes.html" class="card-link">استكشف التشكيلة <i class="fa-solid fa-arrow-left"></i></a>
+              <a href="perfumes.html" class="btn btn-outline" style="width: 100%; text-align: center;">تسوق العطور</a>
             </div>
           </article>
 
-          <!-- Fashion Page Link -->
+          <!-- Fashion -->
           <article class="category-card">
             <div class="card-img-placeholder">
               <span class="card-badge">FASHION</span>
@@ -87,13 +140,13 @@
             <div class="card-body">
               <div>
                 <h3 class="card-title">الملابس والأزياء</h3>
-                <p class="card-text">قصات حديثة ومريحة تجمع الطابع الرياضي بالأناقة الراقية مع تطريز دقيق لشعار MH.</p>
+                <p class="card-text">قصات حديثة ومريحة تجمع الطابع الرياضي بالأناقة الراقية وتطريز دقيق لشعار MH.</p>
               </div>
-              <a href="fashion.html" class="card-link">استكشف التشكيلة <i class="fa-solid fa-arrow-left"></i></a>
+              <a href="fashion.html" class="btn btn-outline" style="width: 100%; text-align: center;">تسوق الأزياء</a>
             </div>
           </article>
 
-          <!-- Accessories Page Link -->
+          <!-- Accessories -->
           <article class="category-card">
             <div class="card-img-placeholder">
               <span class="card-badge">ACCESSORIES</span>
@@ -104,11 +157,11 @@
                 <h3 class="card-title">الإكسسوارات والساعات</h3>
                 <p class="card-text">ساعات كلاسيكية، أساور جلدية، وخواتم بلمسات نهائية دقيقة مصحوبة بعلب مخملية.</p>
               </div>
-              <a href="accessories.html" class="card-link">استكشف القطع <i class="fa-solid fa-arrow-left"></i></a>
+              <a href="accessories.html" class="btn btn-outline" style="width: 100%; text-align: center;">استكشف القطع</a>
             </div>
           </article>
 
-          <!-- Kids Page Link -->
+          <!-- Kids -->
           <article class="category-card">
             <div class="card-img-placeholder">
               <span class="card-badge">MH KIDS</span>
@@ -117,9 +170,9 @@
             <div class="card-body">
               <div>
                 <h3 class="card-title">تشكيلة الأطفال</h3>
-                <p class="card-text">امتداد مرح وأنيق لهوية MH مصمم بخامات ناعمة ومريحة للأطفال مع طابع شبابي مبتكر.</p>
+                <p class="card-text">امتداد مرح وأنيق لهوية MH مصمم بخامات ناعمة ومريحة للأطفال مع طابع شبابي.</p>
               </div>
-              <a href="kids.html" class="card-link">تشكيلة الصغار <i class="fa-solid fa-arrow-left"></i></a>
+              <a href="kids.html" class="btn btn-outline" style="width: 100%; text-align: center;">تشكيلة الصغار</a>
             </div>
           </article>
         </div>
@@ -156,7 +209,7 @@
         <div>
           <h4 class="footer-heading">تواصل معنا</h4>
           <ul class="footer-links">
-            <li><i class="fa-brands fa-whatsapp" style="color: var(--mh-orange);"></i> واتساب الدعم الفني</li>
+            <li><i class="fa-brands fa-whatsapp" style="color: var(--mh-orange);"></i> خدمة العملاء عبر واتساب</li>
             <li><i class="fa-solid fa-envelope" style="color: var(--mh-orange);"></i> contact@mh-style.com</li>
           </ul>
         </div>
@@ -168,6 +221,6 @@
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

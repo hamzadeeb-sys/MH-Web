@@ -1,50 +1,47 @@
-/**
- * MH Brand Core Scripts
- * Clean modular ES6 standard
- */
 document.addEventListener('DOMContentLoaded', () => {
-  initNavigation();
-  initCartState();
-  initProductAddActions();
-});
-
-// إدارة فتح وإغلاق القائمة في الموبايل عبر الفئات (Classes)
-function initNavigation() {
+  // 1. مزامنة القائمة في الشاشات الصغيرة
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
-  if (!menuToggle || !navMenu) return;
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navMenu.classList.toggle('is-active');
+      menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    });
 
-  menuToggle.addEventListener('click', () => {
-    const isExpanded = navMenu.classList.toggle('is-active');
-    menuToggle.setAttribute('aria-expanded', isExpanded);
-  });
-}
+    // إغلاق القائمة عند النقر خارجها
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        navMenu.classList.remove('is-active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
-// مزامنة حالة سلة الشراء عبر الصفحات باستخدام LocalStorage
-function initCartState() {
+  // 2. إدارة وتحديث السلة مع LocalStorage
   const cartBadge = document.getElementById('cartCount');
-  if (!cartBadge) return;
 
-  const currentCartCount = localStorage.getItem('mh_cart_count') || '0';
-  cartBadge.textContent = currentCartCount;
-}
+  const updateCartDisplay = () => {
+    if (!cartBadge) return;
+    const currentCount = localStorage.getItem('mh_cart_count') || '0';
+    cartBadge.textContent = currentCount;
+  };
 
-// معالجة إضافة المنتجات وتحديث العداد
-function initProductAddActions() {
+  updateCartDisplay();
+
+  // معالجة أزرار إضافة المنتجات
   const addButtons = document.querySelectorAll('[data-action="add-to-cart"]');
-  const cartBadge = document.getElementById('cartCount');
-
   addButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      
       let count = parseInt(localStorage.getItem('mh_cart_count') || '0', 10);
       count += 1;
-      localStorage.setItem('mh_cart_count', count);
+      localStorage.setItem('mh_cart_count', count.toString());
+
+      updateCartDisplay();
 
       if (cartBadge) {
-        cartBadge.textContent = count;
         cartBadge.style.transform = 'scale(1.3)';
         setTimeout(() => {
           cartBadge.style.transform = 'scale(1)';
@@ -52,4 +49,4 @@ function initProductAddActions() {
       }
     });
   });
-}
+});

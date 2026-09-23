@@ -9,52 +9,49 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./css/main.css">
-  
-  <!-- قواعد خاصة بصفحة الهوية والمواصفات (Scoped Styles) -->
+  <link rel="stylesheet" href="css/style.css">
   <style>
     .essence-layout {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 50px;
+      gap: 40px;
       align-items: start;
+    }
+    .pillar-card {
+      background: var(--surface-dark);
+      border-right: 3px solid var(--mh-orange);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      margin-bottom: 20px;
     }
     .spec-card {
       background: var(--surface-dark);
       border: 1px solid var(--graphite);
       border-radius: var(--radius-md);
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      padding: 28px;
     }
     .spec-table-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 0;
+      padding: 12px 0;
       border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.9rem;
     }
     .spec-table-row:last-child {
       border-bottom: none;
     }
-    .color-pill {
+    .color-swatch-box {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-family: var(--font-en);
-      font-size: 0.85rem;
+      font-weight: 600;
     }
     .color-swatch {
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .pillar-card {
-      background: var(--surface-dark);
-      border-right: 3px solid var(--mh-orange);
-      padding: 24px;
-      border-radius: var(--radius-sm);
-      margin-bottom: 20px;
     }
     @media (max-width: 900px) {
       .essence-layout {
@@ -87,12 +84,12 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="action-btn" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="action-btn" aria-label="السلة">
+        <button class="action-btn" type="button" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="action-btn" type="button" aria-label="السلة">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="badge" id="cartCount">0</span>
         </button>
-        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -115,57 +112,55 @@
     <section class="section-spacing">
       <div class="container">
         <div class="essence-layout">
-          <!-- Text and Pillars -->
           <div>
             <div class="pillar-card">
-              <h3 style="color: var(--pure-white); margin-bottom: 8px;"><i class="fa-solid fa-eye" style="color: var(--mh-orange); margin-left: 8px;"></i> التباين الحاد (Sharp Contrast)</h3>
+              <h3 style="color: var(--pure-white); margin-bottom: 6px;"><i class="fa-solid fa-eye" style="color: var(--mh-orange); margin-left: 8px;"></i> التباين الحاد (Sharp Contrast)</h3>
               <p style="color: var(--cool-grey); font-size: 0.9rem;">
-                الاعتماد على سيادة اللون الأسود الملوكي بنسبة 70% ليمنح المنتج وقاراً وهيبة، مع لمسات حيوية باللون البرتقالي الحصري بنسبة 20% تخلق شرارة البداية والانتباه.
+                الاعتماد على سيادة اللون الأسود الملوكي بنسبة 70% ليمنح المنتج وقاراً وهيبة، مع لمسات حيوية باللون البرتقالي الحصري بنسبة 20%.
               </p>
             </div>
 
             <div class="pillar-card">
-              <h3 style="color: var(--pure-white); margin-bottom: 8px;"><i class="fa-solid fa-box-open" style="color: var(--mh-orange); margin-left: 8px;"></i> تجربة فتح العلبة (Unboxing Experience)</h3>
+              <h3 style="color: var(--pure-white); margin-bottom: 6px;"><i class="fa-solid fa-box-open" style="color: var(--mh-orange); margin-left: 8px;"></i> تجربة فتح العلبة (Unboxing)</h3>
               <p style="color: var(--cool-grey); font-size: 0.9rem;">
-                كل علبة مصنعة من ورق مقوى معالج بملمس مخملي (Soft-Touch)، ومختومة بشريط أمان مع رسالة شكر خاصة محفورة حرارياً، لتبدأ الفخامة قبل لمس المنتج ذاته.
+                كل علبة مصنعة من ورق مقوى معالج بملمس ناعم (Soft-Touch)، ومختومة بشريط أمان نسيجي يحمل تطريز الشعار.
               </p>
             </div>
 
             <div class="pillar-card">
-              <h3 style="color: var(--pure-white); margin-bottom: 8px;"><i class="fa-solid fa-medal" style="color: var(--mh-orange); margin-left: 8px;"></i> الاستدامة والجودة العالية</h3>
+              <h3 style="color: var(--pure-white); margin-bottom: 6px;"><i class="fa-solid fa-medal" style="color: var(--mh-orange); margin-left: 8px;"></i> الاستدامة والمتانة</h3>
               <p style="color: var(--cool-grey); font-size: 0.9rem;">
-                مواد التعبئة قابلة لإعادة التدوير بنسبة 100% دون التنازل عن صلابة الهيكل والحماية الميكانيكية للقطع أثناء عمليات الشحن السريع.
+                مواد التعبئة والتغليف مصممة بمقاومة ميكانيكية عالية للصدمات مع قابلية كاملة لإعادة التدوير دون استهلاك مواد بلاستيكية ضارة.
               </p>
             </div>
           </div>
 
-          <!-- Specs Table Frame -->
           <aside class="spec-card">
-            <h3 style="color: var(--pure-white); font-size: 1.15rem; margin-bottom: 20px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+            <h3 style="color: var(--pure-white); font-size: 1.1rem; margin-bottom: 18px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px;">
               دليل محددات الهوية الرسمية
             </h3>
 
             <div class="spec-table-row">
               <span style="color: var(--cool-grey);">البرتقالي الأساسي:</span>
-              <div class="color-pill">
+              <div class="color-swatch-box">
                 <span class="color-swatch" style="background: #F45110;"></span>
-                <span style="color: var(--pure-white); font-weight: 600;">#F45110</span>
+                <span style="color: var(--pure-white);">#F45110</span>
               </div>
             </div>
 
             <div class="spec-table-row">
               <span style="color: var(--cool-grey);">الأسود العميق:</span>
-              <div class="color-pill">
-                <span class="color-swatch" style="background: #0F0F0F;"></span>
-                <span style="color: var(--pure-white); font-weight: 600;">#0F0F0F</span>
+              <div class="color-swatch-box">
+                <span class="color-swatch" style="background: #0F0F0F; border: 1px solid #333;"></span>
+                <span style="color: var(--pure-white);">#0F0F0F</span>
               </div>
             </div>
 
             <div class="spec-table-row">
               <span style="color: var(--cool-grey);">الرمادي المساند:</span>
-              <div class="color-pill">
+              <div class="color-swatch-box">
                 <span class="color-swatch" style="background: #C3CACC;"></span>
-                <span style="color: var(--pure-white); font-weight: 600;">#C3CACC</span>
+                <span style="color: var(--pure-white);">#C3CACC</span>
               </div>
             </div>
 
@@ -180,7 +175,7 @@
             </div>
 
             <div class="spec-table-row">
-              <span style="color: var(--cool-grey);">شعار المونوغرام:</span>
+              <span style="color: var(--cool-grey);">المونوغرام:</span>
               <span style="color: var(--mh-orange); font-weight: 700;">MH Minimal Geometric</span>
             </div>
           </aside>
@@ -198,6 +193,6 @@
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

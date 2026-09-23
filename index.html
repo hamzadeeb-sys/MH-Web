@@ -5,1019 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MH | One Brand. Every Moment.</title>
   
-  <!-- Google Fonts: Noto Kufi Arabic & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <style>
-    /* ==========================================================================
-       MH Design System Tokens (From Identity Guidelines)
-       ========================================================================== */
-    :root {
-      --mh-orange: #F45110;
-      --mh-orange-hover: #d74309;
-      --deep-black: #0F0F0F;
-      --graphite: #262626;
-      --surface-dark: #171717;
-      --cool-grey: #C3CACC;
-      --mist: #EEF2F3;
-      --pure-white: #FFFFFF;
-      --border-subtle: rgba(195, 202, 204, 0.15);
-      --font-ar: 'Noto Kufi Arabic', sans-serif;
-      --font-en: 'Inter', sans-serif;
-      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--deep-black);
-      color: var(--mist);
-      font-family: var(--font-ar);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: var(--transition-smooth);
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    /* ==========================================================================
-       Header & Navigation
-       ========================================================================== */
-    .top-banner {
-      background: var(--mh-orange);
-      color: var(--pure-white);
-      text-align: center;
-      padding: 6px 15px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(15, 15, 15, 0.92);
-      backdrop-filter: blur(12px);
-      z-index: 1000;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-logo-svg {
-      height: 38px;
-      fill: var(--mh-orange);
-      transition: transform 0.3s ease;
-    }
-
-    .brand-logo-svg:hover {
-      transform: scale(1.04);
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-link {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--mist);
-      position: relative;
-      padding: 6px 0;
-    }
-
-    .nav-link:hover, .nav-link.active {
-      color: var(--mh-orange);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 0%;
-      height: 2px;
-      background: var(--mh-orange);
-      transition: var(--transition-smooth);
-    }
-
-    .nav-link:hover::after, .nav-link.active::after {
-      width: 100%;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .action-btn {
-      background: none;
-      border: none;
-      color: var(--mist);
-      font-size: 1.15rem;
-      cursor: pointer;
-      position: relative;
-      transition: var(--transition-smooth);
-    }
-
-    .action-btn:hover {
-      color: var(--mh-orange);
-    }
-
-    .badge {
-      position: absolute;
-      top: -8px;
-      left: -8px;
-      background: var(--mh-orange);
-      color: var(--pure-white);
-      font-size: 0.7rem;
-      font-family: var(--font-en);
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.4rem;
-      cursor: pointer;
-    }
-
-    /* ==========================================================================
-       Hero Section
-       ========================================================================== */
-    .hero {
-      position: relative;
-      min-height: 86vh;
-      display: flex;
-      align-items: center;
-      background: radial-gradient(circle at 80% 20%, rgba(244, 81, 16, 0.12) 0%, transparent 60%),
-                  radial-gradient(circle at 10% 80%, rgba(38, 38, 38, 0.4) 0%, transparent 50%),
-                  var(--deep-black);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 60px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(244, 81, 16, 0.1);
-      border: 1px solid rgba(244, 81, 16, 0.35);
-      color: var(--mh-orange);
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .hero-title {
-      font-size: 3.4rem;
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 20px;
-      color: var(--pure-white);
-    }
-
-    .hero-title span {
-      color: var(--mh-orange);
-    }
-
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: var(--cool-grey);
-      margin-bottom: 36px;
-      max-width: 520px;
-      line-height: 1.7;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 32px;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: var(--transition-smooth);
-    }
-
-    .btn-primary {
-      background: var(--mh-orange);
-      color: var(--pure-white);
-      border: 1px solid var(--mh-orange);
-    }
-
-    .btn-primary:hover {
-      background: var(--mh-orange-hover);
-      border-color: var(--mh-orange-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(244, 81, 16, 0.3);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--mist);
-      border: 1px solid var(--graphite);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--cool-grey);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--pure-white);
-    }
-
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-card-showcase {
-      width: 100%;
-      height: 480px;
-      background: linear-gradient(145deg, #1c1c1c, #111);
-      border: 1px solid var(--graphite);
-      border-radius: 12px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 30px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-    }
-
-    .hero-card-showcase::before {
-      content: 'MH';
-      position: absolute;
-      top: -40px;
-      left: -20px;
-      font-size: 18rem;
-      font-weight: 900;
-      font-family: var(--font-en);
-      color: rgba(255, 255, 255, 0.03);
-      user-select: none;
-      line-height: 1;
-    }
-
-    .hero-badge-float {
-      position: absolute;
-      top: 24px;
-      right: 24px;
-      background: rgba(15, 15, 15, 0.85);
-      border: 1px solid var(--mh-orange);
-      padding: 8px 16px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      color: var(--pure-white);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* ==========================================================================
-       Instagram-style Highlights Bar (From Identity Assets)
-       ========================================================================== */
-    .highlights-bar {
-      padding: 40px 0;
-      border-bottom: 1px solid var(--border-subtle);
-      background: #121212;
-    }
-
-    .highlights-wrapper {
-      display: flex;
-      gap: 28px;
-      overflow-x: auto;
-      padding: 10px 0 18px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--mh-orange) var(--graphite);
-    }
-
-    .highlights-wrapper::-webkit-scrollbar {
-      height: 5px;
-    }
-
-    .highlights-wrapper::-webkit-scrollbar-thumb {
-      background: var(--mh-orange);
-      border-radius: 10px;
-    }
-
-    .highlight-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      flex-shrink: 0;
-      width: 90px;
-    }
-
-    .highlight-ring {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      padding: 3px;
-      background: linear-gradient(45deg, var(--mh-orange), #262626, var(--mh-orange));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition-smooth);
-    }
-
-    .highlight-item:hover .highlight-ring {
-      transform: scale(1.08);
-      box-shadow: 0 0 16px rgba(244, 81, 16, 0.4);
-    }
-
-    .highlight-circle {
-      width: 100%;
-      height: 100%;
-      background: var(--deep-black);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--mist);
-      font-size: 1.4rem;
-    }
-
-    .highlight-item span {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--cool-grey);
-      text-align: center;
-    }
-
-    /* ==========================================================================
-       Collections Grid
-       ========================================================================== */
-    .section-spacing {
-      padding: 90px 0;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 45px;
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 20px;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--pure-white);
-    }
-
-    .section-title span {
-      color: var(--mh-orange);
-    }
-
-    .section-desc {
-      color: var(--cool-grey);
-      font-size: 0.95rem;
-      margin-top: 6px;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .category-card {
-      background: var(--surface-dark);
-      border: 1px solid var(--graphite);
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
-      transition: var(--transition-smooth);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .category-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--mh-orange);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
-    }
-
-    .card-img-placeholder {
-      height: 280px;
-      background: linear-gradient(180deg, #222 0%, #151515 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card-img-placeholder i {
-      font-size: 5rem;
-      color: rgba(255, 255, 255, 0.06);
-      transition: var(--transition-smooth);
-    }
-
-    .category-card:hover .card-img-placeholder i {
-      transform: scale(1.15);
-      color: rgba(244, 81, 16, 0.15);
-    }
-
-    .card-badge {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      background: var(--deep-black);
-      border: 1px solid var(--border-subtle);
-      padding: 4px 10px;
-      font-size: 0.75rem;
-      border-radius: 3px;
-      color: var(--mh-orange);
-      font-weight: 700;
-    }
-
-    .card-body {
-      padding: 22px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--pure-white);
-      margin-bottom: 8px;
-    }
-
-    .card-text {
-      color: var(--cool-grey);
-      font-size: 0.88rem;
-      margin-bottom: 18px;
-      line-height: 1.5;
-    }
-
-    .card-link {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--mh-orange);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* ==========================================================================
-       Brand Essence / Experience Showcase
-       ========================================================================== */
-    .brand-essence {
-      background: #090909;
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .essence-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .essence-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .feature-box {
-      background: var(--surface-dark);
-      border: 1px solid var(--graphite);
-      padding: 22px;
-      border-radius: 6px;
-      border-right: 3px solid var(--mh-orange);
-    }
-
-    .feature-box h4 {
-      color: var(--pure-white);
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-
-    .feature-box p {
-      color: var(--cool-grey);
-      font-size: 0.82rem;
-    }
-
-    .spec-mockup-frame {
-      border: 1px solid var(--graphite);
-      border-radius: 12px;
-      background: var(--deep-black);
-      padding: 30px;
-      position: relative;
-    }
-
-    .spec-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      font-size: 0.9rem;
-    }
-
-    .spec-label {
-      color: var(--cool-grey);
-    }
-
-    .spec-val {
-      color: var(--pure-white);
-      font-weight: 600;
-      font-family: var(--font-en);
-    }
-
-    /* ==========================================================================
-       Newsletter & Community
-       ========================================================================== */
-    .newsletter-section {
-      text-align: center;
-      background: radial-gradient(circle, rgba(244, 81, 16, 0.08) 0%, transparent 70%);
-      padding: 80px 0;
-    }
-
-    .newsletter-box {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .newsletter-input-group {
-      display: flex;
-      margin-top: 26px;
-      gap: 8px;
-    }
-
-    .newsletter-input {
-      flex-grow: 1;
-      background: var(--surface-dark);
-      border: 1px solid var(--graphite);
-      padding: 14px 18px;
-      border-radius: 4px;
-      color: var(--pure-white);
-      font-family: inherit;
-      outline: none;
-    }
-
-    .newsletter-input:focus {
-      border-color: var(--mh-orange);
-    }
-
-    /* ==========================================================================
-       Footer
-       ========================================================================== */
-    footer {
-      background: #080808;
-      border-top: 1px solid var(--graphite);
-      padding: 70px 0 30px;
-      font-size: 0.9rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 40px;
-      margin-bottom: 50px;
-    }
-
-    .footer-logo-block p {
-      color: var(--cool-grey);
-      margin: 16px 0;
-      max-width: 320px;
-      font-size: 0.88rem;
-    }
-
-    .footer-heading {
-      color: var(--pure-white);
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-      position: relative;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links a {
-      color: var(--cool-grey);
-    }
-
-    .footer-links a:hover {
-      color: var(--mh-orange);
-      padding-right: 4px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--cool-grey);
-      font-size: 0.8rem;
-    }
-
-    /* ==========================================================================
-       Responsive Rules
-       ========================================================================== */
-    @media (max-width: 1024px) {
-      .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .navbar .nav-menu {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-      }
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      .hero-subtitle {
-        margin: 0 auto 30px;
-      }
-      .hero-cta-group {
-        justify-content: center;
-      }
-      .essence-grid {
-        grid-template-columns: 1fr;
-      }
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
   <div class="top-banner">
     <i class="fa-solid fa-gem"></i> الإصدار الخاص 2026 متاح الآن — شحن سريع وتغليف فاخر متكامل مع كل طلب
   </div>
 
-  <!-- Header Navigation -->
   <header>
     <div class="container navbar">
       <div class="logo-container">
-        <a href="#" aria-label="MH Home">
-          <!-- Monogram Logo SVG based on MH Guidelines -->
+        <a href="index.html" aria-label="MH Home">
           <svg class="brand-logo-svg" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">
             <path d="M 15 15 L 45 15 L 45 68 L 72 30 L 102 30 L 102 85 L 122 85 L 122 15 L 152 15 L 152 105 L 122 105 L 122 55 L 95 92 L 68 92 L 45 55 L 45 105 L 15 105 Z" />
           </svg>
         </a>
       </div>
 
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#hero" class="nav-link active">الرئيسية</a></li>
-        <li><a href="#perfumes" class="nav-link">العطور</a></li>
-        <li><a href="#fashion" class="nav-link">الأزياء</a></li>
-        <li><a href="#accessories" class="nav-link">الإكسسوارات</a></li>
-        <li><a href="#kids" class="nav-link">الأطفال</a></li>
-        <li><a href="#essence" class="nav-link">جوهر العلامة</a></li>
-      </ul>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
+          <li><a href="perfumes.html" class="nav-link">العطور</a></li>
+          <li><a href="fashion.html" class="nav-link">الأزياء</a></li>
+          <li><a href="accessories.html" class="nav-link">الإكسسوارات</a></li>
+          <li><a href="kids.html" class="nav-link">الأطفال</a></li>
+          <li><a href="essence.html" class="nav-link">جوهر العلامة</a></li>
+        </ul>
+      </nav>
 
       <div class="nav-actions">
-        <button class="action-btn" title="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="action-btn" title="السلة">
+        <button class="action-btn" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="action-btn" aria-label="السلة">
           <i class="fa-solid fa-bag-shopping"></i>
-          <span class="badge" id="cartCount">2</span>
+          <span class="badge" id="cartCount">0</span>
         </button>
-        <div class="menu-toggle" id="menuToggle">
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
-        </div>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="hero-tag">
-          <i class="fa-solid fa-shield-halved"></i> One Brand. Every Moment.
-        </div>
-        <h1 class="hero-title">
-          تفاصيل تصنع <span>الفرق</span>، وأناقة تعبّر عنك.
-        </h1>
-        <p class="hero-subtitle">
-          هوية متجذرة في التباين الفاخر بين الأسود العميق والبرتقالي الجريء. تجربة استثنائية تبدأ من أول نظرة وحتى فتح علبة المنتج.
-        </p>
-        <div class="hero-cta-group">
-          <a href="#categories" class="btn btn-primary">
-            <span>استكشف التشكيلة</span>
-            <i class="fa-solid fa-arrow-left"></i>
-          </a>
-          <a href="#essence" class="btn btn-outline">
-            <span>دليل الهوية والتغليف</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-card-showcase">
-          <div class="hero-badge-float">
-            <i class="fa-solid fa-check-circle" style="color: var(--mh-orange)"></i>
-            <span>تغليف حصري ومتقن</span>
-          </div>
+  <main>
+    <!-- Sections Grid Categories Link -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="section-header">
           <div>
-            <h3 style="font-size: 1.6rem; color: var(--pure-white); margin-bottom: 6px;">Noir Essence EDP</h3>
-            <p style="color: var(--cool-grey); font-size: 0.9rem;">عطر الجرأة والأناقة المستمرة لجميع الأوقات</p>
+            <h2 class="section-title">قطاعات <span>العلامة</span></h2>
+            <p class="section-desc">نظام بصري متكامل يلبي أدق تفاصيل أناقتك اليومية</p>
           </div>
+        </div>
+
+        <div class="category-grid">
+          <!-- Perfumes Page Link -->
+          <article class="category-card">
+            <div class="card-img-placeholder">
+              <span class="card-badge">PERFUME</span>
+              <i class="fa-solid fa-bottle-droplet"></i>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">عطور MH الفاخرة</h3>
+                <p class="card-text">تركيبات شرقية وغربية مصممة لثبات ممتد مع علبة مخصصة باللونين الأسود والبرتقالي.</p>
+              </div>
+              <a href="perfumes.html" class="card-link">استكشف التشكيلة <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
+
+          <!-- Fashion Page Link -->
+          <article class="category-card">
+            <div class="card-img-placeholder">
+              <span class="card-badge">FASHION</span>
+              <i class="fa-solid fa-vest-patches"></i>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">الملابس والأزياء</h3>
+                <p class="card-text">قصات حديثة ومريحة تجمع الطابع الرياضي بالأناقة الراقية مع تطريز دقيق لشعار MH.</p>
+              </div>
+              <a href="fashion.html" class="card-link">استكشف التشكيلة <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
+
+          <!-- Accessories Page Link -->
+          <article class="category-card">
+            <div class="card-img-placeholder">
+              <span class="card-badge">ACCESSORIES</span>
+              <i class="fa-solid fa-stopwatch"></i>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">الإكسسوارات والساعات</h3>
+                <p class="card-text">ساعات كلاسيكية، أساور جلدية، وخواتم بلمسات نهائية دقيقة مصحوبة بعلب مخملية.</p>
+              </div>
+              <a href="accessories.html" class="card-link">استكشف القطع <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
+
+          <!-- Kids Page Link -->
+          <article class="category-card">
+            <div class="card-img-placeholder">
+              <span class="card-badge">MH KIDS</span>
+              <i class="fa-solid fa-shapes"></i>
+            </div>
+            <div class="card-body">
+              <div>
+                <h3 class="card-title">تشكيلة الأطفال</h3>
+                <p class="card-text">امتداد مرح وأنيق لهوية MH مصمم بخامات ناعمة ومريحة للأطفال مع طابع شبابي مبتكر.</p>
+              </div>
+              <a href="kids.html" class="card-link">تشكيلة الصغار <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Highlights Story Bar -->
-  <section class="highlights-bar">
-    <div class="container">
-      <div class="highlights-wrapper">
-        <div class="highlight-item">
-          <div class="highlight-ring">
-            <div class="highlight-circle"><i class="fa-solid fa-spray-can-sparkles"></i></div>
-          </div>
-          <span>العطور</span>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-ring">
-            <div class="highlight-circle"><i class="fa-solid fa-shirt"></i></div>
-          </div>
-          <span>الأزياء</span>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-ring">
-            <div class="highlight-circle"><i class="fa-solid fa-clock"></i></div>
-          </div>
-          <span>الإكسسوارات</span>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-ring">
-            <div class="highlight-circle"><i class="fa-solid fa-child"></i></div>
-          </div>
-          <span>الأطفال</span>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-ring">
-            <div class="highlight-circle"><i class="fa-solid fa-gift"></i></div>
-          </div>
-          <span>الهدايا</span>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-ring">
-            <div class="highlight-circle"><i class="fa-solid fa-box-open"></i></div>
-          </div>
-          <span>التغليف</span>
-        </div>
-
-        <div class="highlight-item">
-          <div class="highlight-ring">
-            <div class="highlight-circle"><i class="fa-solid fa-truck-fast"></i></div>
-          </div>
-          <span>التوصيل</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories Grid -->
-  <section class="section-spacing" id="categories">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">قطاعات <span>العلامة</span></h2>
-          <p class="section-desc">نظام بصري متكامل يلبي أدق تفاصيل أناقتك اليومية</p>
-        </div>
-        <a href="#" class="card-link">عرض كل المنتجات <i class="fa-solid fa-arrow-left"></i></a>
-      </div>
-
-      <div class="category-grid">
-        <!-- Perfume Card -->
-        <div class="category-card" id="perfumes">
-          <div class="card-img-placeholder">
-            <span class="card-badge">PERFUME</span>
-            <i class="fa-solid fa-bottle-droplet"></i>
-          </div>
-          <div class="card-body">
-            <div>
-              <h3 class="card-title">عطور MH الفاخرة</h3>
-              <p class="card-text">تركيبات شرقية وغربية مصممة لثبات ممتد مع زجاجة وعلبة مخصصة باللونين الأسود والبرتقالي.</p>
-            </div>
-            <a href="#" class="card-link">تسوق العطور <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-
-        <!-- Fashion Card -->
-        <div class="category-card" id="fashion">
-          <div class="card-img-placeholder">
-            <span class="card-badge">FASHION</span>
-            <i class="fa-solid fa-vest-patches"></i>
-          </div>
-          <div class="card-body">
-            <div>
-              <h3 class="card-title">الملابس والأزياء</h3>
-              <p class="card-text">قصات حديثة ومريحة تجمع الطابع الرياضي بالأناقة الراقية مع تطريز دقيق لشعار MH.</p>
-            </div>
-            <a href="#" class="card-link">تسوق الأزياء <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-
-        <!-- Accessories Card -->
-        <div class="category-card" id="accessories">
-          <div class="card-img-placeholder">
-            <span class="card-badge">ACCESSORIES</span>
-            <i class="fa-solid fa-stopwatch"></i>
-          </div>
-          <div class="card-body">
-            <div>
-              <h3 class="card-title">الإكسسوارات والساعات</h3>
-              <p class="card-text">ساعات كلاسيكية، أساور جلدية، وخواتم بلمسات نهائية دقيقة مصحوبة بعلب مخملية أنيقة.</p>
-            </div>
-            <a href="#" class="card-link">استكشف القطع <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-
-        <!-- Kids Card -->
-        <div class="category-card" id="kids">
-          <div class="card-img-placeholder">
-            <span class="card-badge">MH KIDS</span>
-            <i class="fa-solid fa-shapes"></i>
-          </div>
-          <div class="card-body">
-            <div>
-              <h3 class="card-title">تشكيلة الأطفال</h3>
-              <p class="card-text">امتداد مرح وأنيق لهوية MH مصمم بخامات ناعمة ومريحة للأطفال مع طابع شبابي مبتكر.</p>
-            </div>
-            <a href="#" class="card-link">تشكيلة الصغار <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Brand Essence / Specs Showcase -->
-  <section class="section-spacing brand-essence" id="essence">
-    <div class="container">
-      <div class="essence-grid">
-        <div>
-          <div class="hero-tag"><i class="fa-solid fa-fingerprint"></i> جوهر الهوية</div>
-          <h2 class="section-title">بساطة واثقة، <span>وحضور</span> لا يُنسى</h2>
-          <p class="hero-subtitle">
-            قائمتنا البصرية مبنية على التوازن الصارم بين الأسود الملوكي (70%) والبرتقالي المتقد (20%) مع لمسات الضوء والمساحات النظيفة.
-          </p>
-          
-          <div class="essence-features">
-            <div class="feature-box">
-              <h4>نظام التغليف المتكامل</h4>
-              <p>ورق مقوى مطفي، أشرطة نسيج برتقالية، وطباعة عالية الدقة لشعار MH.</p>
-            </div>
-            <div class="feature-box">
-              <h4>نبرة تواصل رصينة</h4>
-              <p>واضح، واثق، وموجز بعيداً عن الصخب والمبالغة الإعلانية غير المدروسة.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="spec-mockup-frame">
-          <h3 style="color: var(--pure-white); font-size: 1.1rem; margin-bottom: 20px; border-bottom: 1px solid var(--graphite); padding-bottom: 10px;">
-            دليل ألوان ومواصفات البراند
-          </h3>
-          
-          <div class="spec-row">
-            <span class="spec-label">اللون البرتقالي الأساسي:</span>
-            <span class="spec-val" style="color: var(--mh-orange);">#F45110 (MH Orange)</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label">الأسود الحصري:</span>
-            <span class="spec-val">#0F0F0F (Deep Black)</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label">الرمادي المساعد:</span>
-            <span class="spec-val">#C3CACC (Cool Grey)</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label">الخط العربي:</span>
-            <span class="spec-val">Noto Kufi Arabic</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label">الخط اللاتيني:</span>
-            <span class="spec-val">Inter / Bold</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter -->
-  <section class="newsletter-section">
-    <div class="container newsletter-box">
-      <h2 style="font-size: 2rem; color: var(--pure-white); margin-bottom: 10px;">انضم إلى مجتمع MH</h2>
-      <p style="color: var(--cool-grey);">كن أول من يحصل على الإطلاقات الحصرية والمجموعات المحدودة عند صدورها مباشرة.</p>
-      
-      <form class="newsletter-input-group" onsubmit="event.preventDefault(); alert('تم اشتراكك بنجاح في نشرة MH الإخبارية');">
-        <input type="email" class="newsletter-input" placeholder="أدخل بريدك الإلكتروني..." required>
-        <button type="submit" class="btn btn-primary">اشتراك</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -1025,86 +134,40 @@
           <svg class="brand-logo-svg" viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" style="height: 32px;">
             <path d="M 15 15 L 45 15 L 45 68 L 72 30 L 102 30 L 102 85 L 122 85 L 122 15 L 152 15 L 152 105 L 122 105 L 122 55 L 95 92 L 68 92 L 45 55 L 45 105 L 15 105 Z" />
           </svg>
-          <p>
-            علامة رائدة في صناعة نمط الحياة العصري؛ نقدم أرقى العطور، الأزياء، والإكسسوارات المصممة لتصنع الفارق في كل لحظة.
-          </p>
+          <p>علامة رائدة في صناعة نمط الحياة العصري؛ نقدم أرقى المنتجات المصممة لتصنع الفارق في كل لحظة.</p>
         </div>
-
         <div>
-          <h4 class="footer-heading">الأقسام الرئيسية</h4>
+          <h4 class="footer-heading">الأقسام</h4>
           <ul class="footer-links">
-            <li><a href="#perfumes">العطور والروائح</a></li>
-            <li><a href="#fashion">أزياء الشارع الراقية</a></li>
-            <li><a href="#accessories">الساعات والإكسسوارات</a></li>
-            <li><a href="#kids">تشكيلة الأطفال</a></li>
+            <li><a href="perfumes.html">العطور</a></li>
+            <li><a href="fashion.html">الأزياء</a></li>
+            <li><a href="accessories.html">الإكسسوارات</a></li>
+            <li><a href="kids.html">الأطفال</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="footer-heading">خدمة العملاء</h4>
           <ul class="footer-links">
-            <li><a href="#">سياسة الشحن والتوصيل</a></li>
-            <li><a href="#">الاسترجاع والاستبدال</a></li>
+            <li><a href="#">الشحن والتوصيل</a></li>
+            <li><a href="#">الاستبدال والاسترجاع</a></li>
             <li><a href="#">دليل المقاسات</a></li>
-            <li><a href="#">الأسئلة الشائعة FAQ</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="footer-heading">تواصل معنا</h4>
           <ul class="footer-links">
-            <li><i class="fa-brands fa-whatsapp" style="color: var(--mh-orange); margin-left: 8px;"></i> خدمة العملاء عبر واتساب</li>
-            <li><i class="fa-brands fa-instagram" style="color: var(--mh-orange); margin-left: 8px;"></i> @mh.style</li>
-            <li><i class="fa-solid fa-envelope" style="color: var(--mh-orange); margin-left: 8px;"></i> contact@mh-style.com</li>
+            <li><i class="fa-brands fa-whatsapp" style="color: var(--mh-orange);"></i> واتساب الدعم الفني</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--mh-orange);"></i> contact@mh-style.com</li>
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <div>جميع الحقوق محفوظة © 2026 لعلامة MH. One Brand. Every Moment.</div>
-        <div>تصميم وتطوير احترافي متوافق مع دليل الهوية البصرية.</div>
+        <div>جميع الحقوق محفوظة © 2026 لعلامة MH.</div>
+        <div>One Brand. Every Moment.</div>
       </div>
     </div>
   </footer>
 
-  <!-- Interactive Logic -->
-  <script>
-    // Mobile Drawer Navigation Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    menuToggle.addEventListener('click', () => {
-      if (navMenu.style.display === 'flex') {
-        navMenu.style.display = 'none';
-      } else {
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '76px';
-        navMenu.style.right = '0';
-        navMenu.style.width = '100%';
-        navMenu.style.background = '#111';
-        navMenu.style.padding = '20px';
-        navMenu.style.borderBottom = '1px solid #262626';
-      }
-    });
-
-    // Simple Cart Increment Feedback
-    const actionBtns = document.querySelectorAll('.card-link');
-    const cartBadge = document.getElementById('cartCount');
-    let currentCount = 2;
-
-    actionBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentCount++;
-        cartBadge.textContent = currentCount;
-        cartBadge.style.transform = 'scale(1.3)';
-        setTimeout(() => {
-          cartBadge.style.transform = 'scale(1)';
-        }, 200);
-      });
-    });
-  </script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
